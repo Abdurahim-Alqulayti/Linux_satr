@@ -1,0 +1,56 @@
+------------------------------- Linux 102 --------------------------------
+chmod u+w <file>                     // give permissions to user # w > write
+chmod g+x <file>                     // for grope # x > execute # r > read 
+chmod o-r <file>                     // for other remove permissions
+chmod 740 <file>                     // look at the table below 
+whoami                               // who am i
+chown <oner> <file>                  // change the oner of a file ex: chown root cp.txt
+chgrp <grope> <file>                 // same but for a grope
+getfacl <file>                       // see the Access Control List
+setfacl -m "u:user:permissions" file // Add user with permissions ex:setfacl -m "u:root:rwx" file
+setfacl -m "g:group:permission" file // Add group with permissions
+setfacl -x "<user>" <file>           // remove user all permissions
+
+------------------------------- Linux 101 --------------------------------
+apt-get update                  // to get last virgin of package installer
+apt-get upgrade
+apt-get install ( app name )
+apt-get remove  ( app name )
+dpkg -l                         // to see all the packeges that you have install
+dpkg -s ( app name )            // see if the app exist
+ctrl + D                        // reset
+nano                            // edit in any file even python
+
+------------------------------- Linux 100 --------------------------------
+ls /home                        // show regular users
+ls /                            // show root file
+ls /bin                         // contain the command 
+ls /bin/sbin                    // contain the root command
+ls etc                          // contain all configuration (users, password, etc.)
+ls tmp                          // contain all temporary files
+
+d                               // directory
+c                               // character device < move one character each time > 
+s                               // Socket 
+p                               // Pipe
+b                               // block device < move one block each time >
+l                               // link
+------------------
+rwxrwxrwx                       // <user> , <Group> , <Public>
+ ---------------------------------------
+|        0          |        ---        | 
+ ---------------------------------------
+|        1          |        --x        | 
+ ---------------------------------------
+|        2          |        -w-        | 
+ ---------------------------------------
+|        3          |        -wx        | 
+ ---------------------------------------
+|        4          |        r--        | 
+ ---------------------------------------
+|        5          |        r-x        | 
+ ---------------------------------------
+|        6          |        rw-        | 
+ ---------------------------------------
+|        7          |        rwx        | 
+ ---------------------------------------
